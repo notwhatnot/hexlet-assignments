@@ -7,8 +7,13 @@ import java.util.Map;
 
 class App {
 
-    public static Map<String, Integer> getWordCount(String sentence) {
+    public static Map getWordCount(String sentence) {
         Map <String, Integer>  wordsCount = new HashMap<>();
+
+        if ("".equals(sentence)) {
+            return  wordsCount;
+        }
+
         Integer initialValue = 1;
 
         for (String word : sentence.split(" ")) {
@@ -25,6 +30,11 @@ class App {
     }
 
     public static String toString(Map<String, Integer> wordsCount) {
+
+        if (wordsCount.isEmpty()) {
+            return "{}";
+        }
+
         StringBuilder builder = new StringBuilder();
         String tab = "  ";
         builder.append("{\n");
