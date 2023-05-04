@@ -30,9 +30,7 @@ public abstract class Tag {
         this.tagAttributes = tagAttributes;
     }
 
-    public abstract String toString();
-
-    protected String getTagAttributesAsString(Map<String, String> tagAttributes) {
+    protected String getTagAttributesAsString() {
         return tagAttributes.keySet().stream()
                 .map(key -> " " + key + "=\"" + tagAttributes.get(key) + "\"")
                 .collect(Collectors.joining(""));

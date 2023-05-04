@@ -11,7 +11,7 @@ public class SingleTag extends Tag {
 
     @Override
     public String toString() {
-        return String.format("<%s%s>", getTagName(), getTagAttributesAsString(getTagAttributes()));
+        return String.format("<%s%s>", getTagName(), getTagAttributesAsString());
     }
 
 }

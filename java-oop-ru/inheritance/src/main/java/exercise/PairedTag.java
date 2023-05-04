@@ -2,6 +2,7 @@ package exercise;
 
 import java.util.Map;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 // BEGIN
@@ -19,9 +20,9 @@ public class PairedTag extends Tag {
     @Override
     public String toString() {
         String childrenTagAsString = childrenTag.stream()
-                .map(Tag::toString)
+                .map(Object::toString)
                 .collect(Collectors.joining(""));
-        return String.format("<%s%s>%s%s</%s>", getTagName(), getTagAttributesAsString(getTagAttributes()),
+        return String.format("<%s%s>%s%s</%s>", getTagName(), getTagAttributesAsString(),
                 tagBody, childrenTagAsString, getTagName());
     }
 }
