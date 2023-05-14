@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 // BEGIN
 class Sorter {
-    public static List<String> takeOldestMans2(List<Map<String, String>> users) {
+    public static List<String> takeOldestMans(List<Map<String, String>> users) {
         return users.stream()
                 .filter(user -> user.get("gender") == "male")
                 .sorted((user1, user2) -> {
